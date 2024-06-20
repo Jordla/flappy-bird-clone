@@ -15,3 +15,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
+	
+	if is_on_floor():
+		queue_free()
