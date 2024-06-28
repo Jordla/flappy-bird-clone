@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://7408nx3egl42"]
+
+[ext_resource type="Script" path="res://ui/score_ui.gd" id="1_0h0sg"]
+
+[node name="ScoreUI" type="CanvasLayer"]
+script = ExtResource("1_0h0sg")
+
+[node name="ScoreCenterContainer" type="CenterContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.472
+anchor_right = 0.528
+anchor_bottom = 0.031
+offset_left = 0.159973
+offset_right = -0.160004
+offset_bottom = 0.32
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="ScoreCenterContainer"]
+layout_mode = 2
+text = "0"
