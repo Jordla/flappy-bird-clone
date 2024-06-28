@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://brewofhgstuyp"]
+
+[ext_resource type="PackedScene" uid="uid://4vmx05oti8jt" path="res://obstacles/obstacle.tscn" id="1_vy65d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pldh0"]
+size = Vector2(128, 512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmfdc"]
+size = Vector2(128, 448)
+
+[node name="Obstacle2" instance=ExtResource("1_vy65d")]
+
+[node name="Polygon2D" parent="PipeObstacle1" index="0"]
+scale = Vector2(1, 1.6)
+polygon = PackedVector2Array(-64, 0, 64, 0, 64, 320, 0.181442, 320, -64, 320)
+
+[node name="CollisionShape2D" parent="PipeObstacle1" index="1"]
+position = Vector2(0, 256)
+shape = SubResource("RectangleShape2D_pldh0")
+
+[node name="CollisionShape2D" parent="ScoreDetector" index="0"]
+position = Vector2(0, 608)
+
+[node name="Polygon2D" parent="PipeObstacle2" index="0"]
+position = Vector2(0, 346.88)
+scale = Vector2(1, 0.6975)
+
+[node name="CollisionShape2D" parent="PipeObstacle2" index="1"]
+position = Vector2(0, 928)
+shape = SubResource("RectangleShape2D_hmfdc")

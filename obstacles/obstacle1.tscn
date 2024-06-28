@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvxjjr6iudd"]
+
+[ext_resource type="PackedScene" uid="uid://4vmx05oti8jt" path="res://obstacles/obstacle.tscn" id="1_kw7wj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r51g1"]
+size = Vector2(128, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5txln"]
+size = Vector2(128, 640)
+
+[node name="Obstacle1" instance=ExtResource("1_kw7wj")]
+
+[node name="CollisionShape2D" parent="PipeObstacle1" index="1"]
+shape = SubResource("RectangleShape2D_r51g1")
+
+[node name="CollisionShape2D" parent="PipeObstacle2" index="1"]
+shape = SubResource("RectangleShape2D_5txln")

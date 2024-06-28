@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://4vmx05oti8jt"]
+
+[ext_resource type="Script" path="res://obstacles/obstacle.gd" id="1_y5olc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxld"]
+size = Vector2(48, 192)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_y5olc")
+
+[node name="PipeObstacle1" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="PipeObstacle1"]
+polygon = PackedVector2Array(-64, 0, 64, 0, 64, 320, -64, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeObstacle1"]
+position = Vector2(0, 160)
+debug_color = Color(0.905882, 0.239216, 0.478431, 0.419608)
+
+[node name="ScoreDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreDetector"]
+position = Vector2(0, 416)
+shape = SubResource("RectangleShape2D_lrxld")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="PipeObstacle2" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="PipeObstacle2"]
+polygon = PackedVector2Array(-64, 1152, 64, 1152, 64, 512, -64, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeObstacle2"]
+position = Vector2(0, 832)
+debug_color = Color(0.905882, 0.239216, 0.478431, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, 576)
+scale = Vector2(6.4, 57.6)
+
+[connection signal="body_entered" from="ScoreDetector" to="." method="_on_score_detector_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
