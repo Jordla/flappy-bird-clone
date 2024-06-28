@@ -26,4 +26,5 @@ func game_over_pause():
 	get_tree().paused = true
 	score_ui.hide()
 	game_over_ui.show()
+	game_over_ui.display_final_score(score)
 	
