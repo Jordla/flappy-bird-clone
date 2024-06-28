@@ -3,6 +3,7 @@ extends CharacterBody2D
 const JUMP_VELOCITY : float = -550
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 var is_able_to_jump : bool = true
 
 
@@ -17,5 +18,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	# Collision with floor and obstacles
 	if is_on_floor() or is_on_ceiling() or is_on_wall():
 		is_able_to_jump = false
+		is_paused()
+
+func is_paused():
+	get_tree().paused = true
