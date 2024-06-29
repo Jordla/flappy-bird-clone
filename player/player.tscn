@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 process_mode = 3
 collision_layer = 3
 script = ExtResource("1_32qm5")
+gravity = 1100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
