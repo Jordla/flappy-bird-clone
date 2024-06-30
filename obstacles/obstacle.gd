@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Obstacle
 
+@onready var audio_stream_player = $ScoreDetector/AudioStreamPlayer
 @export var speed : float = 300
 var velocity : Vector2 = Vector2.ZERO
 
@@ -27,3 +28,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_score_detector_body_entered(body):
 	Events.point_gained.emit()
+	audio_stream_player.playing = true
+	
