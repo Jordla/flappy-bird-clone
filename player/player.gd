@@ -1,30 +1,46 @@
 extends CharacterBody2D
 
-@export var JUMP_VELOCITY : float = -550
+@onready var animation_player = $AnimationPlayer
+
+@export var jump_velocity : float = -550
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var gravity : int
 
 var is_able_to_jump : bool = true
+var game_end : bool
+var fall_timer : float
 
 signal game_over
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	apply_gravity(delta)
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_able_to_jump: 
-		velocity.y = JUMP_VELOCITY
+	jump()
 
 	move_and_slide()
 	
+	fall_timer += delta
+	if fall_timer > 0.65 and not game_end:
+		animation_player.play("fall")
+	
 	# Collision with floor and obstacles
 	if is_on_floor() or is_on_ceiling() or is_on_wall():
-		is_able_to_jump = false
+		#is_able_to_jump = false
+		game_end = true
 		game_over.emit()
 
-func is_paused():
-	get_tree().paused = true
+func apply_gravity(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+func jump():
+	if Input.is_action_just_pressed("ui_accept") and not game_end: 
+		velocity.y = jump_velocity
+		fall_timer = 0.0
+		animation_player.play("RESET")
+
