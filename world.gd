@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var score_ui = $ScoreUI
 @onready var game_over_ui = $GameOverUI
 @onready var player = $Player
@@ -27,4 +26,6 @@ func game_over_pause():
 	score_ui.hide()
 	game_over_ui.show()
 	game_over_ui.display_final_score(score)
+	
+	
 	

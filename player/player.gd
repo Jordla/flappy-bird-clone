@@ -15,24 +15,25 @@ signal game_over
 
 
 func _physics_process(delta):
-	
 	# Add the gravity.
 	apply_gravity(delta)
-
 	# Handle jump.
 	jump()
 
-	move_and_slide()
 	
 	fall_timer += delta
 	if fall_timer > 0.65 and not game_end:
 		animation_player.play("fall")
 	
+	move_and_slide()
 	# Collision with floor and obstacles
 	if is_on_floor() or is_on_ceiling() or is_on_wall():
-		#is_able_to_jump = false
+		if not game_end:
+			$GameOverSound.play()
 		game_end = true
 		game_over.emit()
+	
+	
 
 func apply_gravity(delta):
 	if not is_on_floor():

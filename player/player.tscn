@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnur16ocukf2"]
+[gd_scene load_steps=8 format=3 uid="uid://cnur16ocukf2"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_32qm5"]
 [ext_resource type="Texture2D" uid="uid://b5vfsjfbh1py5" path="res://player/icon.svg" id="1_otfxn"]
+[ext_resource type="AudioStream" uid="uid://du4pcb8o7mbbw" path="res://player/negative_beeps-6008.mp3" id="3_n3gff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01kjv"]
 size = Vector2(64, 64)
@@ -60,3 +61,7 @@ shape = SubResource("RectangleShape2D_01kjv")
 libraries = {
 "": SubResource("AnimationLibrary_wy5q2")
 }
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_n3gff")
