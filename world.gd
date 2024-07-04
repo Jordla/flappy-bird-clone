@@ -5,6 +5,7 @@ extends Node2D
 @onready var player = $Player
 
 var score : int = 0
+var score_manager = ScoreFile.new()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,9 @@ func game_over_pause():
 	score_ui.hide()
 	game_over_ui.show()
 	game_over_ui.display_final_score(score)
+	score_manager.get_max(score)
+	print(score_manager.load_file()) # Printing multiple times
+	# Might want to seperate score handling
 	
 	
 	

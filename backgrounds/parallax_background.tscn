@@ -10,27 +10,27 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="MainBackgroundColor" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-672.8, 639.2)
+position = Vector2(-40.8, 639.2)
 scale = Vector2(4.7, 4.7)
 texture = ExtResource("1_hle6a")
 
 [node name="FarTrees" type="ParallaxLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="FarTrees"]
-position = Vector2(-672.8, 639.2)
+position = Vector2(-40.8, 639.2)
 scale = Vector2(4.7, 4.7)
 texture = ExtResource("2_uh3a4")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
 
 [node name="MidTrees" type="Sprite2D" parent="ParallaxLayer3"]
-position = Vector2(-672.8, 639.2)
+position = Vector2(-40.8, 639.2)
 scale = Vector2(4.7, 4.7)
 texture = ExtResource("3_vg84m")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
 
 [node name="CloseTrees" type="Sprite2D" parent="ParallaxLayer4"]
-position = Vector2(-672.8, 639.2)
+position = Vector2(-40.8, 639.2)
 scale = Vector2(4.7, 4.7)
 texture = ExtResource("4_hh7ff")
