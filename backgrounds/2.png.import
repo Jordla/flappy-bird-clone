@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvpc4mdbnq1cc"
-path="res://.godot/imported/parallax-demon-woods-mid-trees.png-bd94b8ece36b76e79f76fea7ebe669e8.ctex"
+uid="uid://dsuwdslowxuhp"
+path="res://.godot/imported/2.png-fa15b03183ab56472b7a96766adff53b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/parallax-demon-woods-mid-trees.png"
-dest_files=["res://.godot/imported/parallax-demon-woods-mid-trees.png-bd94b8ece36b76e79f76fea7ebe669e8.ctex"]
+source_file="res://backgrounds/2.png"
+dest_files=["res://.godot/imported/2.png-fa15b03183ab56472b7a96766adff53b.ctex"]
 
 [params]
 

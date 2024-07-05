@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d02scrxkd7vyy"
-path="res://.godot/imported/parallax-demon-woods-close-trees.png-2f8af1c4f180074fe86c971ad811d7ff.ctex"
+uid="uid://bjw5v3tbhiv4h"
+path="res://.godot/imported/4.png-00f6c6c85ef1dc3af4032cc0e3ceb988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/parallax-demon-woods-close-trees.png"
-dest_files=["res://.godot/imported/parallax-demon-woods-close-trees.png-2f8af1c4f180074fe86c971ad811d7ff.ctex"]
+source_file="res://backgrounds/4.png"
+dest_files=["res://.godot/imported/4.png-00f6c6c85ef1dc3af4032cc0e3ceb988.ctex"]
 
 [params]
 

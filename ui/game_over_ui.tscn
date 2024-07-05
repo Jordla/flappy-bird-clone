@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://ui/game_over_ui.gd" id="1_2m7is"]
 
 [node name="GameOverUI" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_2m7is")
 
 [node name="ColorRect" type="ColorRect" parent="."]

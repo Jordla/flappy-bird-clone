@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://ui/score_ui.gd" id="1_0h0sg"]
 
 [node name="ScoreUI" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_0h0sg")
 
 [node name="ScoreCenterContainer" type="CenterContainer" parent="."]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://2rtrcek2186e"]
+[gd_scene load_steps=3 format=3 uid="uid://2rtrcek2186e"]
+
+[ext_resource type="Texture2D" uid="uid://dju67lfdvl4rl" path="res://backgrounds/5.png" id="1_7scn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayv6s"]
 size = Vector2(720, 128)
@@ -6,8 +8,18 @@ size = Vector2(720, 128)
 [node name="Floor" type="StaticBody2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 720, 0, 720, 128, 0, 128)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(360, 63.5)
+scale = Vector2(1.5, 2.76087)
+texture = ExtResource("1_7scn8")
+region_enabled = true
+region_rect = Rect2(0, 134, 480, 46)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(360, 64)

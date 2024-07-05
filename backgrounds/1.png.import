@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://um2i18db8v5j"
-path="res://.godot/imported/Parallax Desert Combined Background.png-5a641f226db5585a3bd7060fb5b9b2e6.ctex"
+uid="uid://jwcy1851nw0a"
+path="res://.godot/imported/1.png-6e5aabc07274cdecdeb678786d0d1fae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/Parallax Desert Combined Background.png"
-dest_files=["res://.godot/imported/Parallax Desert Combined Background.png-5a641f226db5585a3bd7060fb5b9b2e6.ctex"]
+source_file="res://backgrounds/1.png"
+dest_files=["res://.godot/imported/1.png-6e5aabc07274cdecdeb678786d0d1fae.ctex"]
 
 [params]
 

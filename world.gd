@@ -26,10 +26,10 @@ func game_over_pause():
 	get_tree().paused = true
 	score_ui.hide()
 	game_over_ui.show()
-	game_over_ui.display_final_score(score)
+	#game_over_ui.display_final_score(score)
 	score_manager.get_max(score)
-	print(score_manager.load_file()) # Printing multiple times
-	# Might want to seperate score handling
+	var highscore = int(score_manager.load_file())
+	game_over_ui.display_final_score(highscore)
 	
 	
 	
