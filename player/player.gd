@@ -11,7 +11,6 @@ var is_able_to_jump : bool = true
 var game_end : bool
 var fall_timer : float
 
-signal game_over
 
 
 func _physics_process(delta):
@@ -31,7 +30,7 @@ func _physics_process(delta):
 		if not game_end:
 			$GameOverSound.play()
 		game_end = true
-		game_over.emit()
+		Events.game_over.emit()
 	
 	
 

@@ -12,11 +12,11 @@ func _process(delta):
 	pass
 	
 func save_file(content):
-	var file = FileAccess.open("res://scores/score_data.txt", FileAccess.WRITE)
+	var file = FileAccess.open("res://ui/scores/score_data.txt", FileAccess.WRITE)
 	file.store_string(content)
 
 func load_file():
-	var file = FileAccess.open("res://scores/score_data.txt", FileAccess.READ)
+	var file = FileAccess.open("res://ui/scores/score_data.txt", FileAccess.READ)
 	var content = file.get_as_text()
 	return content
 
