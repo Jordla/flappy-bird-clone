@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwghet2qfru67"]
+[gd_scene load_steps=3 format=3 uid="uid://bwghet2qfru67"]
 
 [ext_resource type="Script" path="res://ui/game_over_ui.gd" id="1_2m7is"]
+[ext_resource type="Texture2D" uid="uid://d3wn53yc05wto" path="res://scores/9slice2.png" id="2_wwivu"]
 
 [node name="GameOverUI" type="CanvasLayer"]
 layer = 2
@@ -10,42 +11,35 @@ script = ExtResource("1_2m7is")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.278431)
+metadata/_edit_lock_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = -1
-anchor_top = 0.484
+[node name="GameOverContainer" type="CenterContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.516
-offset_top = 20.48
-offset_bottom = -20.48
+anchor_bottom = 0.5
+offset_top = -48.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="GameOverContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 70
 text = "Game Over"
 metadata/_edit_use_anchors_ = true
-
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="FinalScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -456.0
-offset_bottom = -392.0
+offset_top = -352.0
+offset_bottom = -288.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -53,3 +47,119 @@ grow_vertical = 0
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 text = "Restart"
+
+[node name="ScoresContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.55
+anchor_right = 0.777778
+anchor_bottom = 0.68125
+offset_left = -1.52588e-05
+offset_top = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CurrentScoreContainer" type="MarginContainer" parent="ScoresContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScoresContainer/CurrentScoreContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_wwivu")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ScoreContainer" type="CenterContainer" parent="ScoresContainer/CurrentScoreContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.318
+anchor_right = 0.682
+anchor_bottom = 0.202
+offset_left = 0.0319977
+offset_right = -0.0320053
+offset_bottom = 0.0639992
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="ScoresContainer/CurrentScoreContainer/NinePatchRect/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score
+"
+
+[node name="TextContainer" type="CenterContainer" parent="ScoresContainer/CurrentScoreContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -11.5
+offset_right = 37.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScoresContainer/CurrentScoreContainer/NinePatchRect/TextContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="BestScoreContainer" type="MarginContainer" parent="ScoresContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScoresContainer/BestScoreContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_wwivu")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="TextContainer" type="CenterContainer" parent="ScoresContainer/BestScoreContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.355
+anchor_right = 0.645
+anchor_bottom = 0.202
+offset_left = 0.0199966
+offset_right = -0.0200043
+offset_bottom = 0.0639992
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="ScoresContainer/BestScoreContainer/NinePatchRect/TextContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Best"
+
+[node name="ScoreContainer" type="CenterContainer" parent="ScoresContainer/BestScoreContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -20.0
+offset_right = 37.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScoresContainer/BestScoreContainer/NinePatchRect/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
